@@ -43,7 +43,7 @@ export const saveWeight = (weight, type, date) => async dispatch => {
 
     const body = JSON.stringify({ weight, type, date });
 
-    const res = await axios.put(`/api/weightTracked`, body, config);
+    const res = await axios.put(`https://fitnessl-logger.herokuapp.com/api/weightTracked`, body, config);
     dispatch({
       type: UPDATE_WEIGHT,
       payload: res.data
@@ -93,7 +93,7 @@ export const addExercise = exercise => async dispatch => {
 // Delete exercise
 export const deleteExercise = id => async dispatch => {
   try {
-    await axios.delete(`/api/exercises/${id}`);
+    await axios.delete(`https://fitnessl-logger.herokuapp.com/api/exercises/${id}`);
 
     //dispatch(setAlert('Exercise Removed', 'success'));
   } catch (err) {
@@ -146,7 +146,7 @@ export const addTrackedExercises = exercises => async dispatch => {
     };
 
     const body = JSON.stringify({ exercises });
-    const res = await axios.put("/api/exercisesTracked", body, config);
+    const res = await axios.put("https://fitnessl-logger.herokuapp.com/api/exercisesTracked", body, config);
     dispatch({
       type: ADD_TRACKED_EXERCISES,
       payload: res.data
@@ -168,7 +168,7 @@ export const addTrackedExercises = exercises => async dispatch => {
 // Delete tracked exercise
 export const deleteTrackedExercise = id => async dispatch => {
   try {
-    await axios.delete(`/api/exercisesTracked/${id}`);
+    await axios.delete(`https://fitnessl-logger.herokuapp.com/api/exercisesTracked/${id}`);
   } catch (err) {
     dispatch({
       type: AUTH_ERROR,
@@ -185,7 +185,7 @@ export const addSet = set => async dispatch => {
         "Content-Type": "application/json"
       }
     };
-    const res = await axios.put("/api/exercisesTracked/sets", set, config);
+    const res = await axios.put("https://fitnessl-logger.herokuapp.com/api/exercisesTracked/sets", set, config);
     dispatch({
       type: ADD_SET,
       payload: res.data
@@ -210,7 +210,7 @@ export const deleteTrackedExerciseSet = (
   setid
 ) => async dispatch => {
   try {
-    await axios.delete(`/api/exercisesTracked/${exerciseid}/sets/${setid}`);
+    await axios.delete(`https://fitnessl-logger.herokuapp.com/api/exercisesTracked/${exerciseid}/sets/${setid}`);
   } catch (err) {
     dispatch({
       type: AUTH_ERROR,
@@ -231,7 +231,7 @@ export const createWorkout = workout => async dispatch => {
 
     const body = JSON.stringify(workout);
 
-    const res = await axios.put(`/api/workouts`, body, config);
+    const res = await axios.put(`https://fitnessl-logger.herokuapp.com/api/workouts`, body, config);
     dispatch({
       type: CREATE_WORKOUT,
       payload: res.data
@@ -253,7 +253,7 @@ export const createWorkout = workout => async dispatch => {
 // Delete workout
 export const deleteWorkout = id => async dispatch => {
   try {
-    await axios.delete(`/api/workouts/${id}`);
+    await axios.delete(`https://fitnessl-logger.herokuapp.com/api/workouts/${id}`);
   } catch (err) {
     dispatch({
       type: AUTH_ERROR,
@@ -270,7 +270,7 @@ export const editWorkout = workout => async dispatch => {
         "Content-Type": "application/json"
       }
     };
-    const res = await axios.put(`/api/workouts/${workout.id}`, workout, config);
+    const res = await axios.put(`https://fitnessl-logger.herokuapp.com/api/workouts/${workout.id}`, workout, config);
     dispatch({
       type: EDIT_WORKOUT,
       payload: res.data
