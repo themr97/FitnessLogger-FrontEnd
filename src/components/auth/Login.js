@@ -47,7 +47,7 @@ const Login = ({ login, isAuthenticated }) => {
           password is used or stored.
         </p>
         <p>
-          Enter email test@test.com and password test123 to test the web application! ENJOY!
+          <b>Enter email test@test.com and password test123 to test the web application! ENJOY!</b>
         </p>
         <form className="form" onSubmit={e => onSubmit(e)}>
           <div className="form-group">
