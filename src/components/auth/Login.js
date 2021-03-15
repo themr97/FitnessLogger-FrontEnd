@@ -46,6 +46,9 @@ const Login = ({ login, isAuthenticated }) => {
           Sign in to start tracking exercises. No sensitive data other than a
           password is used or stored.
         </p>
+        <p>
+          Enter email test@test.com and password test123 to test the web application! ENJOY!
+        </p>
         <form className="form" onSubmit={e => onSubmit(e)}>
           <div className="form-group">
             <input
