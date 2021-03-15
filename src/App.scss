@@ -1,0 +1,130 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap");
+
+$primary: hsl(0, 0%, 0%);
+$secondary: hsl(0, 24%, 67%);
+$light: hsl(197, 24%, 94%);
+$dark: grey;
+@import "~bootstrap/scss/bootstrap.scss";
+
+@media screen and (max-width: 500px) {
+  #root,
+  #root p {
+    font-size: 10pt;
+  }
+  #root h1 {
+    font-size: 16pt;
+  }
+  #root h2 {
+    font-size: 15pt;
+  }
+  #root h3 {
+    font-size: 14pt;
+  }
+  #root h4 {
+    font-size: 13pt;
+  }
+  #root h5 {
+    font-size: 12pt;
+  }
+  #root h6 {
+    font-size: 11pt;
+  }
+}
+
+#root {
+  color: $dark;
+  font-family: "Lexend Deca";
+  min-width: 320px;
+}
+
+#root .disabled {
+  cursor: default;
+  color: hsl(218, 17%, 62%);
+  text-decoration-line: line-through;
+}
+
+.modal {
+  overflow-y: auto;
+}
+
+.modal-open {
+  overflow: auto;
+}
+
+.clickable:hover {
+  cursor: pointer;
+  background: whitesmoke;
+}
+
+#root .disabled:hover {
+  cursor: default;
+  color: hsl(218, 17%, 62%);
+  text-decoration-line: line-through;
+}
+
+#root button {
+  outline: none;
+}
+
+#root a {
+  transition: 0.5s;
+  text-decoration: none;
+  color: hsl(197, 24%, 94%);
+}
+
+#root a:hover {
+  color: $dark;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translatey(0px);
+  }
+  30% {
+    transform: translatey(-3px);
+  }
+  100% {
+    transform: translatey(0px);
+  }
+}
+
+#root a.navbar-brand:hover {
+  -webkit-animation-name: float;
+  animation-name: float;
+  animation-duration: 0.4s;
+  animation-iteration-count: 1;
+}
+
+#spinner {
+  border: 2px solid hsl(218, 17%, 62%);
+  border-top-color: hsl(197, 24%, 94%);
+  width: 17.5vh;
+  height: 17.5vh;
+  border-radius: 50%;
+  animation: spin 1s infinite;
+}
+#spinner-small {
+  border: 2px solid hsl(218, 17%, 62%);
+  border-top-color: hsl(197, 24%, 94%);
+  width: 5vh;
+  height: 5vh;
+  border-radius: 50%;
+  animation: spin 1s infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
